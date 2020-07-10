@@ -1,6 +1,6 @@
 # ulid-rs
 
-![Continuous Integration](https://github.com/suyash/ulid-rs/workflows/Continuous%20Integration/badge.svg)
+![Continuous Integration](https://github.com/suyash/ulid-rs/workflows/Continuous%20Integration/badge.svg) [![crates.io badge](https://img.shields.io/crates/v/ulid-rs.svg)](https://crates.io/crates/ulid-rs) [![docs.rs badge](https://docs.rs/ulid-rs/badge.svg)](https://docs.rs/ulid-rs) 
 
 Rewrites https://github.com/suyash/ulid from C++ to Rust
 
