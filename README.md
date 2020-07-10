@@ -1,5 +1,7 @@
 # ulid-rs
 
+![Continuous Integration](https://github.com/suyash/ulid-rs/workflows/Continuous%20Integration/badge.svg)
+
 Rewrites https://github.com/suyash/ulid from C++ to Rust
 
 This exposes a single interface for Ulid creation

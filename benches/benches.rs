@@ -33,7 +33,7 @@ fn new_utc_now(c: &mut Criterion) {
 
 fn new_rand_random(c: &mut Criterion) {
     c.bench_function("new_rand_random", |b| {
-        b.iter(|| Ulid::new(black_box(20), || rand::random()))
+        b.iter(|| Ulid::new(black_box(20), rand::random))
     });
 }
 
@@ -45,7 +45,7 @@ fn new_systemtime_now_rand_random(c: &mut Criterion) {
                     .duration_since(UNIX_EPOCH)
                     .unwrap()
                     .as_secs(),
-                || rand::random(),
+                rand::random,
             )
         })
     });
@@ -53,17 +53,17 @@ fn new_systemtime_now_rand_random(c: &mut Criterion) {
 
 fn new_utc_now_rand_random(c: &mut Criterion) {
     c.bench_function("new_utc_now_rand_random", |b| {
-        b.iter(|| Ulid::new(Utc::now().timestamp() as u64, || rand::random()))
+        b.iter(|| Ulid::new(Utc::now().timestamp() as u64, rand::random))
     });
 }
 
 fn marshal(c: &mut Criterion) {
-    let ulid = Ulid::new(Utc::now().timestamp() as u64, || rand::random());
+    let ulid = Ulid::new(Utc::now().timestamp() as u64, rand::random);
     c.bench_function("marshal", |b| b.iter(|| ulid.marshal()));
 }
 
 fn marshal_to_string(c: &mut Criterion) {
-    let ulid = Ulid::new(Utc::now().timestamp() as u64, || rand::random());
+    let ulid = Ulid::new(Utc::now().timestamp() as u64, rand::random);
     c.bench_function("marshal_to_string", |b| b.iter(|| ulid.to_string()));
 }
 
@@ -74,7 +74,7 @@ fn unmarshal(c: &mut Criterion) {
 }
 
 fn timestamp(c: &mut Criterion) {
-    let ulid = Ulid::new(Utc::now().timestamp() as u64, || rand::random());
+    let ulid = Ulid::new(Utc::now().timestamp() as u64, rand::random);
     c.bench_function("timestamp", |b| b.iter(|| ulid.timestamp()));
 }
 
