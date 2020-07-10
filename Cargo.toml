@@ -3,6 +3,11 @@ name = "ulid-rs"
 version = "0.1.0"
 authors = ["Suyash <hi@suy.io>"]
 edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "Rewrites https://github.com/suyash/ulid from C++ to Rust"
+repository = "https://github.com/suyash/ulid-rs"
+documentation = "https://docs.rs/ulid-rs"
+readme = "README.md"
 
 [dependencies]
 thiserror = "1.0.20"
