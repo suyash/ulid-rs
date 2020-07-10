@@ -12,7 +12,6 @@ jobs:
           - stable
           - beta
           - nightly
-          - 1.37.0  # MSRV, bounded by std::iter::Copied (criterion)
 
     steps:
       - uses: actions/checkout@v2
