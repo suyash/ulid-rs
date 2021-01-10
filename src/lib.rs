@@ -64,7 +64,7 @@ static DECODING: &[u8; 256] = &[
 ];
 
 /// Ulid
-#[derive(Debug, PartialEq, PartialOrd)]
+#[derive(Clone, Copy, Debug, PartialEq, PartialOrd)]
 pub struct Ulid([u8; 16]);
 
 impl Ulid {
